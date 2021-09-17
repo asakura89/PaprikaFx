@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{985FBED4-9C41-43BE-9892-7C7EBDF1A528}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PaprikaTaskExample</RootNamespace>
+    <AssemblyName>PaprikaTaskExample</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Arvy\ActionResponseViewModel.cs">
+      <Link>Arvy\ActionResponseViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Eksmaru\XmlExt.cs">
+      <Link>Eksmaru\XmlExt.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\Emitter.cs">
+      <Link>Emi\Emitter.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\EmitterEventArgs.cs">
+      <Link>Emi\EmitterEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\EmitterException.cs">
+      <Link>Emi\EmitterException.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\IEmitterLoader.cs">
+      <Link>Emi\IEmitterLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\IEventRegistrar.cs">
+      <Link>Emi\IEventRegistrar.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\XmlConfigEmitterLoader.cs">
+      <Link>Emi\XmlConfigEmitterLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\XmlConfigEventRegistrar.cs">
+      <Link>Emi\XmlConfigEventRegistrar.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\XmlEventDefinition.cs">
+      <Link>Emi\XmlEventDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\Emi\XmlEventDefinitionLoader.cs">
+      <Link>Emi\XmlEventDefinitionLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Exy\ExceptionExt.cs">
+      <Link>Exy\ExceptionExt.cs</Link>
+    </Compile>
+    <Compile Include="..\Nvy\NameValueItem.cs">
+      <Link>Nvy\NameValueItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Reflx\DefaultAssemblyResolver.cs">
+      <Link>Reflx\DefaultAssemblyResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Reflx\ReflectionExt.cs">
+      <Link>Reflx\ReflectionExt.cs</Link>
+    </Compile>
+    <Compile Include="..\Reflx\TypeAndAssembly.cs">
+      <Link>Reflx\TypeAndAssembly.cs</Link>
+    </Compile>
+    <Compile Include="..\Reflx\TypeAndAssemblyParser.cs">
+      <Link>Reflx\TypeAndAssemblyParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Ria\PipelineContext.cs">
+      <Link>PipelineContext.cs</Link>
+    </Compile>
+    <Compile Include="Task2.cs" />
+    <Compile Include="Task1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskExampleContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="emitter.config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

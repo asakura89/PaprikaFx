@@ -1,0 +1,6 @@
+<configuration>
+  <events>
+    <event name="task2:started" type="PaprikaTaskExample.Task2, PaprikaTaskExample" method="OnTask2ProcessStarted" />
+    <event name="task2:finished" type="PaprikaTaskExample.Task2, PaprikaTaskExample" method="OnTask2ProcessFinished" />
+  </events>
+</configuration>
