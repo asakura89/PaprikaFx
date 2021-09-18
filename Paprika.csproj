@@ -41,22 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arvy\ActionResponseViewModel.cs" />
-    <Compile Include="Eksmaru\XmlExt.cs" />
-    <Compile Include="Emi\Emitter.cs" />
-    <Compile Include="Emi\EmitterEventArgs.cs" />
-    <Compile Include="Emi\EmitterException.cs" />
-    <Compile Include="Emi\IEmitterLoader.cs" />
-    <Compile Include="Emi\IEventRegistrar.cs" />
-    <Compile Include="Emi\XmlConfigEmitterLoader.cs" />
-    <Compile Include="Emi\XmlConfigEventRegistrar.cs" />
-    <Compile Include="Emi\XmlEventDefinition.cs" />
-    <Compile Include="Emi\XmlEventDefinitionLoader.cs" />
-    <Compile Include="Exy\ExceptionExt.cs" />
-    <Compile Include="Meutia\IServiceRegistry.cs" />
-    <Compile Include="Meutia\ServiceInstanceNotFoundException.cs" />
-    <Compile Include="Meutia\ServiceRegistry.cs" />
-    <Compile Include="Nvy\NameValueItem.cs" />
+    <Compile Include="GlobalContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyVersion.cs">
@@ -64,17 +49,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssemblyVersion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reflx\DefaultAssemblyResolver.cs" />
-    <Compile Include="Reflx\ReflectionExt.cs" />
-    <Compile Include="Reflx\TypeAndAssembly.cs" />
-    <Compile Include="Reflx\TypeAndAssemblyParser.cs" />
-    <Compile Include="Ria\IPipelineLoader.cs" />
-    <Compile Include="Ria\PipelineContext.cs" />
-    <Compile Include="Ria\PipelineException.cs" />
-    <Compile Include="Ria\PipelineExecutor.cs" />
-    <Compile Include="Ria\XmlConfigPipelineLoader.cs" />
-    <Compile Include="Ria\XmlPipelineActionDefinition.cs" />
-    <Compile Include="Ria\XmlPipelinesDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AssemblyVersion.tt">
@@ -88,8 +62,30 @@
   <ItemGroup>
     <None Include="pipeline.config.xml">
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Emi\Emi.csproj">
+      <Project>{2851ab33-c4fa-41e1-96ca-925b4dd1a355}</Project>
+      <Name>Emi</Name>
+    </ProjectReference>
+    <ProjectReference Include="Ria\Arvy\Arvy.csproj">
+      <Project>{3a658b44-725f-44a8-a0f0-710e56e99bc6}</Project>
+      <Name>Arvy</Name>
+    </ProjectReference>
+    <ProjectReference Include="Ria\Arvy\Exy\Exy.csproj">
+      <Project>{aed04e87-1239-4184-9572-0e6a860e23a0}</Project>
+      <Name>Exy</Name>
+    </ProjectReference>
+    <ProjectReference Include="Ria\Reflx\Reflx.csproj">
+      <Project>{ff60305a-a48b-4e61-ab32-48acca429ad9}</Project>
+      <Name>Reflx</Name>
+    </ProjectReference>
+    <ProjectReference Include="Ria\Ria.csproj">
+      <Project>{677002b2-8ba8-4e0a-a03e-1981d4756a37}</Project>
+      <Name>Ria</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

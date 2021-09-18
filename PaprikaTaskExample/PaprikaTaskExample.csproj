@@ -35,60 +35,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Arvy\ActionResponseViewModel.cs">
-      <Link>Arvy\ActionResponseViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\Eksmaru\XmlExt.cs">
-      <Link>Eksmaru\XmlExt.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\Emitter.cs">
-      <Link>Emi\Emitter.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\EmitterEventArgs.cs">
-      <Link>Emi\EmitterEventArgs.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\EmitterException.cs">
-      <Link>Emi\EmitterException.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\IEmitterLoader.cs">
-      <Link>Emi\IEmitterLoader.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\IEventRegistrar.cs">
-      <Link>Emi\IEventRegistrar.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\XmlConfigEmitterLoader.cs">
-      <Link>Emi\XmlConfigEmitterLoader.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\XmlConfigEventRegistrar.cs">
-      <Link>Emi\XmlConfigEventRegistrar.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\XmlEventDefinition.cs">
-      <Link>Emi\XmlEventDefinition.cs</Link>
-    </Compile>
-    <Compile Include="..\Emi\XmlEventDefinitionLoader.cs">
-      <Link>Emi\XmlEventDefinitionLoader.cs</Link>
-    </Compile>
-    <Compile Include="..\Exy\ExceptionExt.cs">
-      <Link>Exy\ExceptionExt.cs</Link>
-    </Compile>
-    <Compile Include="..\Nvy\NameValueItem.cs">
-      <Link>Nvy\NameValueItem.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflx\DefaultAssemblyResolver.cs">
-      <Link>Reflx\DefaultAssemblyResolver.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflx\ReflectionExt.cs">
-      <Link>Reflx\ReflectionExt.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflx\TypeAndAssembly.cs">
-      <Link>Reflx\TypeAndAssembly.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflx\TypeAndAssemblyParser.cs">
-      <Link>Reflx\TypeAndAssemblyParser.cs</Link>
-    </Compile>
-    <Compile Include="..\Ria\PipelineContext.cs">
-      <Link>PipelineContext.cs</Link>
-    </Compile>
+    <Compile Include="ExampleEventHandler.cs" />
     <Compile Include="Task2.cs" />
     <Compile Include="Task1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,8 +43,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="emitter.config.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Emi\Emi.csproj">
+      <Project>{2851ab33-c4fa-41e1-96ca-925b4dd1a355}</Project>
+      <Name>Emi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ria\Arvy\Arvy.csproj">
+      <Project>{3a658b44-725f-44a8-a0f0-710e56e99bc6}</Project>
+      <Name>Arvy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ria\Ria.csproj">
+      <Project>{677002b2-8ba8-4e0a-a03e-1981d4756a37}</Project>
+      <Name>Ria</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

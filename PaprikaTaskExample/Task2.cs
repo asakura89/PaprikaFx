@@ -6,9 +6,9 @@ namespace PaprikaTaskExample {
         public void Process(TaskExampleContext context) {
             Emitter emitter = new XmlConfigEmitterLoader().Load();
             emitter.Emit("task2:started", new EmitterEventArgs());
-            context.ActionMessages.Add(new Arvy.ActionResponseViewModel { ResponseType = Arvy.ActionResponseViewModel.Info, Message = $"Information from {nameof(Task2)}." });
-            context.ActionMessages.Add(new Arvy.ActionResponseViewModel { ResponseType = Arvy.ActionResponseViewModel.Info, Message = $"More information from {nameof(Task2)}." });
-            context.ActionMessages.Add(new Arvy.ActionResponseViewModel { ResponseType = Arvy.ActionResponseViewModel.Success, Message = "Ok. let's end it here." });
+            context.ActionMessages.Add(new Arvy.ActionResponseViewModel { ResponseType = Arvy.ActionResponseViewModel.Info, Message = $"{nameof(Task2)} - Information from {nameof(Task2)}." });
+            context.ActionMessages.Add(new Arvy.ActionResponseViewModel { ResponseType = Arvy.ActionResponseViewModel.Info, Message = $"{nameof(Task2)} - More information from {nameof(Task2)}." });
+            context.ActionMessages.Add(new Arvy.ActionResponseViewModel { ResponseType = Arvy.ActionResponseViewModel.Success, Message = $"{nameof(Task2)} - Ok. let's end it here." });
             emitter.Emit("task2:finished", new EmitterEventArgs());
         }
 
