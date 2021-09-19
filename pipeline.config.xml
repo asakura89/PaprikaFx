@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-  <pipelines name="paprika:runtask" contextType="PaprikaTaskExample.TaskExampleContext, PaprikaTaskExample">
-    <action type="PaprikaTaskExample.Task1, PaprikaTaskExample" method="Process" />
-    <action type="PaprikaTaskExample.Task2, PaprikaTaskExample" method="Process" />
-  </pipelines>
-</configuration>

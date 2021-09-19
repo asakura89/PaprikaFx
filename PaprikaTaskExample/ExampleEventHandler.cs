@@ -1,39 +1,17 @@
 using System;
-using System.Collections.Generic;
 
 namespace PaprikaTaskExample {
     public class ExampleEventHandler {
-        public void OnResultContainsInfo(Emi.EmitterEventArgs args) {
-            var messages = args.Data["ActionMessages"] as IList<String>;
-            foreach (String message in messages)
-                Console.WriteLine(message);
-        }
+        public void OnResultContainsInfo(Emi.EmitterEventArgs args) => Console.WriteLine($"{nameof(OnResultContainsInfo)} is called.");
 
-        public void OnResultContainsWarn(Emi.EmitterEventArgs args) {
-            var messages = args.Data["ActionMessages"] as IList<String>;
-            foreach (String message in messages)
-                Console.WriteLine(message);
-        }
+        public void OnResultContainsWarn(Emi.EmitterEventArgs args) => Console.WriteLine($"{nameof(OnResultContainsWarn)} is called.");
 
-        public void OnResultContainsError(Emi.EmitterEventArgs args) {
-            var messages = args.Data["ActionMessages"] as IList<String>;
-            foreach (String message in messages)
-                Console.WriteLine(message);
-        }
+        public void OnResultContainsError(Emi.EmitterEventArgs args) => Console.WriteLine($"{nameof(OnResultContainsError)} is called.");
 
-        public void OnPipelineExecutionFailed(Emi.EmitterEventArgs args) {
-            Console.WriteLine(nameof(OnPipelineExecutionFailed));
-            Console.WriteLine("Hmm. Failed.");
-        }
+        public void OnPipelineExecutionFailed(Emi.EmitterEventArgs args) => Console.WriteLine($"{nameof(OnPipelineExecutionFailed)} is called.");
 
-        public void OnPipelineExecutionSuccess(Emi.EmitterEventArgs args) {
-            Console.WriteLine(nameof(OnPipelineExecutionSuccess));
-            Console.WriteLine("Nice. Success");
-        }
+        public void OnPipelineExecutionSuccess(Emi.EmitterEventArgs args) => Console.WriteLine($"{nameof(OnPipelineExecutionSuccess)} is called.");
 
-        public void OnExceptionThrown(Emi.EmitterEventArgs args) {
-            String message = args.Data["ExceptionMessage"].ToString();
-            Console.WriteLine(message);
-        }
+        public void OnExceptionThrown(Emi.EmitterEventArgs args) => Console.WriteLine($"{nameof(OnExceptionThrown)} is called.");
     }
 }

@@ -46,10 +46,11 @@ namespace Paprika {
 
         public static void Main(String[] args) {
             try {
-                if (!args.Any())
+                GlobalContext.Initialize();
+
+                if (args == null || !args.Any())
                     throw new InvalidOperationException("Please input pipeline name as parameter.");
 
-                GlobalContext.Initialize();
                 PipelineContext result = GlobalContext.PipelineExecutor.Execute(args[0]);
                 HandlePipelineResult(result);
             }
@@ -64,9 +65,10 @@ namespace Paprika {
                 GlobalContext.Emitter.Emit("Paprika:ExceptionThrown", eargs);
             }
 
-            // NOTE: no ReadLine here because this exe intended to be ran in Windows Task Scheduler
-            // it's for debugging purposes only
-            //Console.ReadLine();
+            // NOTE: this exe intended to be ran in Windows Task Scheduler
+#if DEBUG
+            Console.ReadLine();
+#endif
         }
     }
 }

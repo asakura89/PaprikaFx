@@ -1,10 +1,11 @@
 using System;
+using System.IO;
 using Emi;
 
 namespace PaprikaTaskExample {
     public class Task2 {
         public void Process(TaskExampleContext context) {
-            Emitter emitter = new XmlConfigEmitterLoader().Load();
+            Emitter emitter = new XmlConfigEmitterLoader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "paprika.config.xml")).Load();
             emitter.Emit("task2:started", new EmitterEventArgs());
             context.ActionMessages.Add(new Arvy.ActionResponseViewModel { ResponseType = Arvy.ActionResponseViewModel.Info, Message = $"{nameof(Task2)} - Information from {nameof(Task2)}." });
             context.ActionMessages.Add(new Arvy.ActionResponseViewModel { ResponseType = Arvy.ActionResponseViewModel.Info, Message = $"{nameof(Task2)} - More information from {nameof(Task2)}." });

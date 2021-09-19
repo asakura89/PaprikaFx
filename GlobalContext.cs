@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Emi;
 using Reflx;
 using Ria;
@@ -12,8 +13,9 @@ namespace Paprika {
         public static void Initialize() {
             DynamicLoadAssemblies();
 
-            Emitter = new XmlConfigEmitterLoader().Load();
-            PipelineExecutor = new XmlConfigPipelineLoader().Load();
+            String paprikaConfig = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "paprika.config.xml");
+            Emitter = new XmlConfigEmitterLoader(paprikaConfig).Load();
+            PipelineExecutor = new XmlConfigPipelineLoader(paprikaConfig).Load();
         }
 
         static void DynamicLoadAssemblies() {

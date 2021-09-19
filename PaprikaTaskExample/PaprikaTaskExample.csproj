@@ -42,7 +42,7 @@
     <Compile Include="TaskExampleContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="emitter.config.xml">
+    <None Include="paprika.config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
